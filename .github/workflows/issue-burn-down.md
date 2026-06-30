@@ -7,8 +7,7 @@ on:
   workflow_dispatch:
 
 engine:
-  id: copilot
-  model: gpt-4o
+  id: gemini
 
 permissions:
   contents: read
