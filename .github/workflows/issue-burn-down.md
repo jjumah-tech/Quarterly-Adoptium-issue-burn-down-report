@@ -1,25 +1,29 @@
 ---
 description: Quarterly Adoptium issue burn-down report.
+
 on:
- schedule:
-   - cron: "0 9 1 */3 *"
- workflow_dispatch:
+  schedule:
+    - cron: "0 9 1 */3 *"
+  workflow_dispatch:
+
 engine:
- id: copilot
- model: gpt-4o
+  id: copilot
+  model: gpt-4o
+
 permissions:
- contents: read
- issues: read
- pull-requests: read
- copilot-requests: write
+  contents: read
+  issues: read
+  pull-requests: read
+
 network:
- allowed:
-   - defaults
+  allowed:
+    - defaults
+
 safe-outputs:
- create-issue:
-   title-prefix: "[burndown] "
-   labels: [report, burndown]
-   close-older-issues: true
+  create-issue:
+    title-prefix: "[burndown] "
+    labels: [report, burndown]
+    close-older-issues: true
 ---
 # Adoptium Issue Burn-down Report
 Create a single quarterly issue burn-down report covering the public repositories in the **adoptium** GitHub organization, posted as one GitHub issue in this repository.
